@@ -1,0 +1,27 @@
+set Method_Form = standard
+set verbose = false
+set output_interval = 1000
+
+subsection Physical data
+  set initial_time = 0.0
+  set final_time = 0.1
+  set Reynolds = 10.0
+end
+
+subsection Time step data
+  set dt = 0.01
+end
+
+subsection Space discretization
+  set n_of_refines = 0
+  set pressure_fe_degree = 1
+end
+
+subsection Data solve velocity
+  set max_iterations = 50
+  set eps = 1e-6
+  set Krylov_size = 10
+  set off_diagonals = 10
+  set diag_strength = 0.01
+  set update_prec = 5
+end

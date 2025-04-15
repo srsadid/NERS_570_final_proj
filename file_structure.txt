@@ -1,0 +1,44 @@
+project-root/
+│
+├── src/                     # Source code directory
+│   ├── main.cc              # Main driver code (originally main.txt)
+│   │
+│   ├── equation_data.h      # Header for equation-specific data (Velocity, Pressure functions)
+│   │                          # (originally equation_data_h.txt)
+│   │
+│   ├── run_time_parameters.h  # Header for runtime parameters class
+│   │                          # (originally run_time_parameters_h.txt)
+│   ├── run_time_parameters.cc # Implementation for runtime parameters class
+│   │                          # (originally run_time_parameters_cc.txt)
+│   │
+│   ├── navier_stokes_projection.h # Class declaration for NavierStokesProjection
+│   │                              # (originally navier_stokes_projection_h.txt)
+│   │                              # (Might still contain scratch data struct definitions/constructors)
+│   │
+│   ├── navier_stokes_projection/  # Directory for NavierStokesProjection implementations
+│   │   ├── navier_stokes_projection_constructor.cc
+│   │   ├── navier_stokes_projection_run.cc
+│   │   ├── navier_stokes_projection_create_triangulation_and_dofs.cc
+│   │   ├── navier_stokes_projection_initialize.cc
+│   │   ├── navier_stokes_projection_assemble_time_independent_matrices.cc
+│   │   ├── navier_stokes_projection_assemble_gradient_operator.cc
+│   │   ├── navier_stokes_projection_interpolate_velocity.cc
+│   │   ├── navier_stokes_projection_assemble_advection_term.cc
+│   │   ├── navier_stokes_projection_diffusion_step.cc
+│   │   ├── navier_stokes_projection_projection_step.cc
+│   │   ├── navier_stokes_projection_update_pressure.cc
+│   │   ├── navier_stokes_projection_diffusion_component_solve.cc
+│   │   ├── navier_stokes_projection_assemble_vorticity.cc
+│   │   ├── navier_stokes_projection_output_results.cc
+│   │   └── navier_stokes_projection_instantiation.cc # Optional: For explicit template instantiation (template class NavierStokesProjection;)
+│
+├── input/                   # Input files directory (optional)
+│   ├── parameter-file.prm   # Runtime parameter file
+│   └── nsbench2.inp         # Mesh file (or other input geometry)
+│
+├── output/                  # Output files directory (created by the simulation)
+│   └── solution-*.vtk       # Output VTK files
+│
+├── CMakeLists.txt           # Build system file (or Makefile) - **Needs Updating**
+│
+└── README.md                # Project description (where this map would go)
