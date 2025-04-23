@@ -189,4 +189,93 @@ The project is run using `mpirun` for parallel execution:
 ```bash
 mpirun -np <N_PROCS> /path/to/executable/navier_stokes_projection /path/to/parameter-file.prm
 ```
+<N_PROCS>: The number of parallel processes to use.
+/path/to/executable/: The directory where the compiled navier_stokes_projection executable is located (e.g., your build directory).
+/path/to/parameter-file.prm: The path to the parameter file you want to use for this run.
 
+## 4. Input Files
+
+1. Parameter File (.prm)
+The parameter file controls the simulation setup, numerical methods, solver settings, and output. It uses a simple set key = value syntax, organized into subsections. Comments start with #.
+Example Structure 
+
+    ```
+    # Global settings
+    set Method_Form = rotational # or standard
+
+    subsection Physical data
+    set initial_time = 0.   # Simulation start time
+    set final_time   = 10.  # Simulation end time
+    set Reynolds     = 100  # Reynolds number
+    end
+
+    subsection Time step data
+    set dt = 5e-3         # Time step size
+    end
+
+    subsection Problem definition
+    set Mesh filename = zigzag.inp # Path to the mesh file
+    end
+
+    subsection Space discretization
+    set n_of_refines       = 3    # Global mesh refinement levels
+    set pressure_fe_degree = 1    # Polynomial degree for pressure (velocity is degree+1)
+    end
+
+    subsection Data solve velocity
+    # Parameters for the velocity linear solver (GMRES + ILU)
+    set max_iterations = 1000  # Max GMRES iterations 
+    set eps            = 1e-8  # GMRES relative tolerance 
+    set Krylov_size    = 30    # GMRES restart parameter 
+    set off_diagonals  = 70    # ILU preconditioner parameter 
+    set diag_strength  = 0.1   # ILU preconditioner parameter 
+    set update_prec    = 10    # Frequency (timesteps) for updating preconditioner
+    end
+
+    # Output settings
+    set output_interval = 50     # Output results every N timesteps 
+    set verbose = false          # Enable/disable detailed console output 
+    ```
+        Method_Form: standard or rotational
+
+        Physical data: start/stop time & Reynolds number
+
+        Time step data: CFL-based Δt
+
+        Mesh filename: your .inp file
+
+        Space discretization: refinements & FE degree
+
+        Data solve velocity: GMRES + ILU parameters
+
+        output_interval: dump every N steps
+
+        verbose: true / false
+
+2. Mesh File (.inp)
+The code uses a simple ASCII .inp mesh format compatible with deal.II's GridIn::read_inp. Examples are nsbench2.inp and zigzag.inp.
+    ```
+    < N_vertices > < N_elements > 0 0 0
+
+    # Vertex list (0-based indices):
+    0   x0   y0   z0
+    1   x1   y1   z1
+    …  
+
+    # Element connectivity:
+    #   Quads:
+    <elem_id> <material_id> quad v0 v1 v2 v3
+    #   Lines (boundaries):
+    <elem_id> <boundary_id> line vA vB
+    ```
+    material_id:
+
+        1 → fluid cells
+
+        boundary_id
+
+        1 → walls (no-slip)
+
+        2 → inlet (prescribed velocity)
+
+        3 → outlet
