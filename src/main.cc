@@ -68,7 +68,7 @@
 #include <exception> // For std::exception
 
 // Use the namespace defined in the simulation files
-using namespace Step35;
+using namespace NERS570_proj;
 
 /**
  * @brief Main function.

@@ -20,7 +20,7 @@
 #include <vector>  // For std::vector
 #include <memory>  // For std::make_unique
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -192,8 +192,5 @@ namespace Step35 {
     pcout << "  ...done creating triangulation and DoFs." << std::endl; //
   }
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::create_triangulation_and_dofs(const unsigned int);
 
-} // namespace Step35
+} // namespace NERS570_proj

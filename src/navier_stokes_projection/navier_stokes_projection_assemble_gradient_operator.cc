@@ -14,7 +14,7 @@
 #include <vector>  // For std::vector
 #include <memory>  // For unique_ptr access
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -125,8 +125,6 @@ namespace Step35 {
     pcout << "  ...done assembling gradient operator." << std::endl; //
   }
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::assemble_gradient_operator();
 
-} // namespace Step35
+
+} // namespace NERS570_proj

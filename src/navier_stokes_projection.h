@@ -55,7 +55,7 @@
 #include "run_time_parameters.h"
 #include "equation_data.h"
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -272,6 +272,6 @@ private: // Private members, e.g., solver parameters
                 data.fe_val.get_update_flags())
      {}
 //template class NavierStokesProjection<2>;
-} // namespace Step35
+} // namespace NERS570_proj
 
 #endif // NAVIER_STOKES_PROJECTION_H

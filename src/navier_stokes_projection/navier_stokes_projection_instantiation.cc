@@ -14,4 +14,4 @@
 #include "navier_stokes_projection_assemble_vorticity.cc"
 #include "navier_stokes_projection_run.cc"
 
-template class Step35::NavierStokesProjection<2>;
+template class NERS570_proj::NavierStokesProjection<2>;

@@ -5,7 +5,7 @@
 
 #include <vector> // For std::vector loop
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -43,8 +43,5 @@ namespace Step35 {
     // No .compress() needed as operations are element-wise on distributed vectors.
   }
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::interpolate_velocity();
 
-} // namespace Step35
+} // namespace NERS570_proj

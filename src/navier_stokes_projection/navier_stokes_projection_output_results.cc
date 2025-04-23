@@ -15,7 +15,7 @@
 #include <string>  // For std::string
 #include <vector>  // For std::vector
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -188,8 +188,4 @@ namespace Step35 {
   }
 
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::output_results(const unsigned int);
-
-} // namespace Step35
+} // namespace NERS570_proj

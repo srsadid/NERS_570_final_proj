@@ -16,7 +16,7 @@
 #include <map>    // For std::map (boundary values)
 #include <memory> // For unique_ptr access
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -137,8 +137,5 @@ namespace Step35 {
     pcout << "  ...projection step finished (scaled phi_n norm=" << phi_n.l2_norm() << ")." << std::endl; //
   }
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::projection_step(const bool);
 
-} // namespace Step35
+} // namespace NERS570_proj

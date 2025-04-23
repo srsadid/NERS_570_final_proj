@@ -65,7 +65,7 @@
 #include <iostream> // Not strictly needed here
 #include <vector>
 
-namespace Step35 {
+namespace NERS570_proj {
   /**
    * @brief Namespace containing Function classes for problem-specific data.
    */
@@ -266,6 +266,6 @@ namespace Step35 {
     }
 
   } // namespace EquationData
-} // namespace Step35
+} // namespace NERS570_proj
 
 #endif // EQUATION_DATA_H

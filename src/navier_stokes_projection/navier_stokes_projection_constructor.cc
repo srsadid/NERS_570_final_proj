@@ -6,7 +6,7 @@
 #include <deal.II/base/exceptions.h>       // For ExcMessage, AssertThrow
 #include <string>                          // For std::to_string
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -92,4 +92,4 @@ namespace Step35 {
     pcout << "  Projection Type: " << (type == RunTimeParameters::Method::rotational ? "Rotational" : "Standard") << std::endl;
   }
 
-} // namespace Step35
+} // namespace NERS570_proj

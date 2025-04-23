@@ -14,7 +14,7 @@
 
 #include <vector>  // For std::vector
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -139,8 +139,4 @@ namespace Step35 {
     pcout << "    ...done assembling advection term." << std::endl; //
   }
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::assemble_advection_term();
-
-} // namespace Step35
+} // namespace NERS570_proj

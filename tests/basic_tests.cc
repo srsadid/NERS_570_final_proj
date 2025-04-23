@@ -18,7 +18,7 @@
  
  // Use your namespace
  using namespace dealii;
- using namespace Step35;
+ using namespace NERS570_proj;
  
  // Simple assertion helper for tests
  void test_assert(bool condition, const std::string &message) {

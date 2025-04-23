@@ -15,7 +15,7 @@
 // #include <deal.II/lac/petsc_vector.h>
 #include <string> // For std::string
 
-namespace Step35 {
+namespace NERS570_proj {
     /**
      * @brief Namespace containing classes and enums related to runtime parameters.
      */
@@ -94,6 +94,6 @@ namespace Step35 {
       };
 
     } // namespace RunTimeParameters
-  } // namespace Step35
+  } // namespace NERS570_proj
 
   #endif // RUN_TIME_PARAMETERS_H

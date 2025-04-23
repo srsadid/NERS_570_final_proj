@@ -11,7 +11,7 @@
 
 #include "../run_time_parameters.h" // For RunTimeParameters::Method enum
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -74,14 +74,7 @@ namespace Step35 {
             if (reinit_prec)
               {
                 pcout << "      Initializing pressure mass matrix preconditioner..." << std::endl;
-                // Initialize based on the chosen PETSc preconditioner type for prec_mass
-                // Example: if prec_mass is PETScWrappers::PreconditionBlockJacobi
                  prec_mass.initialize(pres_Mass);
-                // Example: if prec_mass is PETScWrappers::PreconditionBoomerAMG (needs HYPRE)
-                // PETScWrappers::PreconditionBoomerAMG::AdditionalData amg_data;
-                // // Set AMG options if needed
-                // prec_mass.initialize(pres_Mass, amg_data);
-                // If using PreconditionNone[cite: 388], initialize likely does nothing.
               }
 
             // Create a separate vector for the RHS 'b'
@@ -138,9 +131,5 @@ namespace Step35 {
 
      pcout << "  ...pressure update finished." << std::endl;
   }
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::update_pressure(const bool);
 
-
-} // namespace Step35
+} // namespace NERS570_proj

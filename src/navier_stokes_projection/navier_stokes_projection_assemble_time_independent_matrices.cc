@@ -5,7 +5,7 @@
 #include <deal.II/lac/petsc_sparse_matrix.h> // For PETScWrappers::MPI::SparseMatrix
 #include <deal.II/base/conditional_ostream.h> // For pcout
 
-namespace Step35 {
+namespace NERS570_proj {
 
   using namespace dealii;
 
@@ -64,8 +64,4 @@ namespace Step35 {
     pcout << "  ...done assembling time-independent matrices." << std::endl; //
   }
 
-  // Explicit Instantiation
-  // If you have navier_stokes_projection_instantiation.cc, remove this line.
-  // template void NavierStokesProjection::assemble_time_independent_matrices();
-
-} // namespace Step35
+} // namespace NERS570_proj

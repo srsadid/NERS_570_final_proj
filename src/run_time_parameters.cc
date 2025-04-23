@@ -8,7 +8,7 @@
 #include <deal.II/base/utilities.h> // Not strictly needed here if only ParameterHandler uses it
 #include <deal.II/base/exceptions.h> // For AssertThrow, ExcFileNotOpen
 
-namespace Step35 {
+namespace NERS570_proj {
   namespace RunTimeParameters {
 
     /**
@@ -35,7 +35,7 @@ namespace Step35 {
         vel_eps(1e-12), //
         vel_diag_strength(0.01), // (ILU parameter)
         verbose(true), //
-        output_interval(15) // (Original default was 1, changed to match constructor init) [cite: 365, 348]
+        output_interval(15) // 
     {
       // --- Declare parameters using ParameterHandler ---
       prm.declare_entry("Method_Form", // Parameter name in file
@@ -127,7 +127,7 @@ namespace Step35 {
                         dealii::Patterns::Bool(), // Allows true/false
                         "Enable verbose output during the simulation run."); //
       prm.declare_entry("output_interval", //
-                        "15", // (Changed default to match constructor init) [cite: 365, 348]
+                        "15", // 
                         dealii::Patterns::Integer(1), // Allows positive integers
                         "Output solution files every 'output_interval' time steps."); //
     }
@@ -203,4 +203,4 @@ namespace Step35 {
     }
 
   } // namespace RunTimeParameters
-} // namespace Step35
+} // namespace NERS570_proj
