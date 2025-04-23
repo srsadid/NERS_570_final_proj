@@ -17,6 +17,11 @@ subsection Time step data
   set dt = 5e-3
 end
 
+subsection Problem definition
+  # Specify the input mesh file
+  set Mesh filename = zigzag.inp # or nsbench2.inp
+end
+
 subsection Space discretization
   # In this subsection we declare the data that is relevant to the space discretization
   # we set the number of global refines the triangulation must have

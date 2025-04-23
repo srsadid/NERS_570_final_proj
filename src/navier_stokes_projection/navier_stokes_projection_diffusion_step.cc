@@ -124,7 +124,7 @@ namespace NERS570_proj {
                                                          vel_exact, // Provides scalar value for component 'd' at current_time
                                                          boundary_values); //
               }
-            else if (boundary_id == 1 || boundary_id == 4) // Dirichlet zero BC (walls?)
+            else if (boundary_id == 1 || boundary_id == 4) // Dirichlet zero BC 
               {
                 VectorTools::interpolate_boundary_values(dof_handler_velocity,
                                                          boundary_id,
