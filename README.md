@@ -4,20 +4,6 @@
 
 ---
 
-## 📋 Table of Contents
-
-1. [Features](#-features)  
-2. [Dependencies](#-dependencies)  
-3. [Installation](#-installation)  
-4. [Building the Project](#-building-the-project)  
-5. [Running Unit Tests](#-running-unit-tests)  
-6. [Usage](#-usage)  
-7. [Mesh File Format (`.inp`)](#-mesh-file-format-inp)  
-8. [Parameter File (`.prm`)](#-parameter-file-prm)  
-9. [Contributing](#-contributing)  
-10. [License](#-license)  
-
----
 
 ## 🔧 Features
 
@@ -189,9 +175,9 @@ The project is run using `mpirun` for parallel execution:
 ```bash
 mpirun -np <N_PROCS> /path/to/executable/navier_stokes_projection /path/to/parameter-file.prm
 ```
-<N_PROCS>: The number of parallel processes to use.
-/path/to/executable/: The directory where the compiled navier_stokes_projection executable is located (e.g., your build directory).
-/path/to/parameter-file.prm: The path to the parameter file you want to use for this run.
+    <N_PROCS>: The number of parallel processes to use.
+    /path/to/executable/: The directory where the compiled navier_stokes_projection executable is located (e.g., your build directory).
+    /path/to/parameter-file.prm: The path to the parameter file you want to use for this run.
 
 ## 4. Input Files
 
