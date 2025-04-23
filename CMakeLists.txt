@@ -127,21 +127,3 @@ message(STATUS "To specify build type (e.g., Release or Debug): cmake .. -DCMAKE
 message(STATUS "Installation prefix: ${CMAKE_INSTALL_PREFIX}")
 
 
-#-----------------------------------------------------------------------------
-# Create Documentation with Doxygen
-#-----------------------------------------------------------------------------
-find_package(Doxygen)
-
-if (DOXYGEN_FOUND)
-  set(DOXYGEN_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
-  set(DOXYGEN_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile.out)
-
-  add_custom_command(
-    OUTPUT ${DOXYGEN_OUT}
-    COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_IN}
-    MAIN_DEPENDENCY ${DOXYGEN_IN}
-    COMMENT "Generating API documentation with Doxygen"
-    VERBATIM)
-
-  add_custom_target(doc ALL DEPENDS ${DOXYGEN_OUT})
-endif()
