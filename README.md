@@ -222,6 +222,7 @@ Example Structure
     set output_interval = 50     # Output results every N timesteps 
     set verbose = false          # Enable/disable detailed console output 
     ```
+Discription:
         Method_Form: standard or rotational
 
         Physical data: start/stop time & Reynolds number
